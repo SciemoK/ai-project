@@ -9,7 +9,8 @@ test('renders Introducing Your Team heading', () => {
 
 test('renders The Boss agent name', () => {
   render(<BrowserRouter><ChatPage /></BrowserRouter>)
-  expect(screen.getByText('The Boss')).toBeInTheDocument()
+  const bosses = screen.getAllByText('The Boss')
+  expect(bosses.length).toBeGreaterThanOrEqual(1)
 })
 
 test('renders chat welcome message', () => {

@@ -78,10 +78,9 @@ export default function ChatPage() {
           <div className="flex-1 flex flex-col gap-6 max-w-[600px]">
             {/* Boss message bubble */}
             <div className="bg-clover-blob rounded-[5px] rounded-tl-none p-6">
-              <div
-                data-agent="The Boss"
-                className="font-grotesk font-bold text-[11px] text-clover-brand uppercase tracking-wider mb-2 before:content-[attr(data-agent)]"
-              />
+              <div className="font-grotesk font-bold text-[11px] text-clover-brand uppercase tracking-wider mb-2">
+                The Boss
+              </div>
               <p className="font-spinnaker text-clover-dark text-[15px] leading-relaxed">
                 Welcome! Tell me about your business so we can build the perfect website together.
               </p>
