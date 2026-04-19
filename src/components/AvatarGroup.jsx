@@ -1,7 +1,7 @@
 const INITIALS = [
-  { letter: 'A', color: '#A75716' },
-  { letter: 'M', color: '#DFDFDF' },
   { letter: 'R', color: '#DFDFDF' },
+  { letter: 'M', color: '#DFDFDF' },
+  { letter: 'A', color: '#A75716' },
 ]
 
 export default function AvatarGroup({ count, label }) {

@@ -78,14 +78,13 @@ export default function LandingPage() {
           <AvatarGroup count="48+" label="Restaurants already live" />
         </div>
 
-        {/* Right: Character illustration */}
-        <div className="relative flex-shrink-0">
-          <div className="absolute -top-8 -left-8 w-[560px] h-[520px] bg-clover-blob rounded-[40%_60%_55%_45%/50%_40%_60%_50%] opacity-60" />
+        {/* Right: Device mockup */}
+        <div className="relative flex-shrink-0 flex items-end">
+          <div className="absolute -top-4 -right-4 w-[520px] h-[520px] bg-clover-blob rounded-full opacity-30" />
           <img
-            src="/Assets/Jack.png"
-            alt="Jack — your AI team leader"
-            className="relative z-10 w-[480px] object-contain object-bottom"
-            style={{ maxHeight: '580px' }}
+            src="/Assets/desktop_phone.png"
+            alt="CLOVER website builder on desktop and phone"
+            className="relative z-10 w-[520px] object-contain drop-shadow-xl"
           />
         </div>
       </section>

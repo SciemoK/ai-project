@@ -9,7 +9,7 @@ const NAV_LINKS = [
 export default function Nav() {
   return (
     <nav
-      className="w-full h-14 bg-clover-nav flex items-center px-8 gap-[497px]"
+      className="w-full h-14 bg-clover-nav flex items-center justify-between px-8"
       style={{ boxShadow: '0px 4px 4px rgba(0,0,0,0.25)' }}
     >
       {/* Logo */}
