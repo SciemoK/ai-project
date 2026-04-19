@@ -17,7 +17,7 @@ export default function LandingPage() {
       <Nav />
 
       {/* Hero Section */}
-      <section className="flex items-center justify-between px-24 pt-12 pb-0 relative overflow-hidden" style={{ minHeight: '560px' }}>
+      <section className="flex-1 flex items-center justify-between px-24 pt-12 pb-0 relative overflow-hidden" style={{ minHeight: '480px' }}>
         {/* Left: Copy column */}
         <div className="flex flex-col gap-7 max-w-[520px] pt-4 z-10">
           <span className="font-grotesk font-bold text-[9.5px] text-clover-muted tracking-widest uppercase">
