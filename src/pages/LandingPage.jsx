@@ -64,7 +64,7 @@ export default function LandingPage() {
       </section>
 
       {/* Characters row — full body illustrated, sitting together */}
-      <section className="flex items-end justify-center px-16 pt-0 pb-0 bg-clover-bg overflow-hidden" style={{ height: '200px' }}>
+      <section className="flex items-end justify-center px-16 pt-0 pb-0 bg-clover-bg overflow-hidden" style={{ height: '320px', marginBottom: '-48px' }}>
         {CHARACTERS.map((char, i) => (
           <div key={char.alt} className="relative flex-shrink-0" style={{ marginLeft: i === 0 ? 0 : '-24px' }}>
             <img
