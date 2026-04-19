@@ -22,21 +22,19 @@ export default function Nav() {
 
       {/* Links + Sign In */}
       <div className="flex items-center gap-7">
-        <div className="flex items-center gap-7">
-          {NAV_LINKS.map(({ label, to }) => (
-            <Link
-              key={label}
-              to={to}
-              className="font-grotesk font-medium text-[11.5px] text-clover-navtext hover:text-clover-brand transition-colors"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
+        {NAV_LINKS.map(({ label, to }) => (
+          <Link
+            key={label}
+            to={to}
+            className="font-grotesk font-medium text-[11.5px] text-clover-navtext hover:text-clover-brand transition-colors"
+          >
+            {label}
+          </Link>
+        ))}
 
         <Link
           to="/onboarding"
-          className="font-grotesk font-bold text-[11px] text-[#FFF3EE] bg-clover-brand px-[18px] py-2 rounded-[4px] hover:opacity-90 transition-opacity"
+          className="font-grotesk font-bold text-[11px] text-clover-nav bg-clover-brand px-[18px] py-2 rounded-[4px] hover:opacity-90 transition-opacity"
         >
           Sign in →
         </Link>
