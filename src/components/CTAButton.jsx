@@ -10,6 +10,7 @@ export default function CTAButton({ children, size = 'small', onClick, className
 
   return (
     <button
+      type="button"
       onClick={onClick}
       className={`${baseStyles} ${variants[size]} ${className}`}
       style={shadow}
