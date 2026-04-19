@@ -16,6 +16,7 @@ export default function App() {
         <Route path="/pricing"    element={<PricingPage />} />
         <Route path="/about"      element={<AboutPage />} />
         <Route path="/my-sites"   element={<MySitesPage />} />
+        <Route path="*"           element={<LandingPage />} />
       </Routes>
     </BrowserRouter>
   )
