@@ -2,38 +2,13 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import CTAButton from '../components/CTAButton'
-import AgentCard from '../components/AgentCard'
 import AvatarGroup from '../components/AvatarGroup'
 
-const AGENTS = [
-  {
-    name: 'The Boss',
-    tagline: 'Strategy & direction',
-    description: 'Greets you, understands your business, and coordinates the whole team.',
-    imageSrc: '/Assets/Jack face.png',
-    imageAlt: 'Jack — The Boss',
-  },
-  {
-    name: 'The Typewriter',
-    tagline: 'Content & copy',
-    description: 'Writes every word — menus, descriptions, headlines. Clear and persuasive.',
-    imageSrc: '/Assets/Franco face.png',
-    imageAlt: 'Franco — The Typewriter',
-  },
-  {
-    name: 'The Painter',
-    tagline: 'Design & visuals',
-    description: 'Picks layouts, colors, and imagery that make your brand shine.',
-    imageSrc: '/Assets/Luna face.png',
-    imageAlt: 'Luna — The Painter',
-  },
-  {
-    name: 'The Tech Guy',
-    tagline: 'Build & deploy',
-    description: 'Handles the code so your site goes live in minutes, not months.',
-    imageSrc: '/Assets/Leo face.png',
-    imageAlt: 'Leo — The Tech Guy',
-  },
+const CHARACTERS = [
+  { src: '/Assets/Jack.png',   alt: 'Jack — The Boss',       label: 'The Boss'       },
+  { src: '/Assets/franco.png', alt: 'Franco — The Typewriter', label: 'The Typewriter' },
+  { src: '/Assets/Luna.png',   alt: 'Luna — The Painter',    label: 'The Painter'    },
+  { src: '/Assets/Leo.png',    alt: 'Leo — The Tech Guy',    label: 'The Tech Guy'   },
 ]
 
 export default function LandingPage() {
@@ -42,9 +17,9 @@ export default function LandingPage() {
       <Nav />
 
       {/* Hero Section */}
-      <section className="flex-1 flex items-start justify-between px-24 pt-16 pb-8 relative overflow-hidden">
+      <section className="flex items-center justify-between px-24 pt-12 pb-0 relative overflow-hidden" style={{ minHeight: '560px' }}>
         {/* Left: Copy column */}
-        <div className="flex flex-col gap-7 max-w-[520px] pt-8">
+        <div className="flex flex-col gap-7 max-w-[520px] pt-4 z-10">
           <span className="font-grotesk font-bold text-[9.5px] text-clover-muted tracking-widest uppercase">
             — AI-POWERED WEB SETUP
           </span>
@@ -55,7 +30,7 @@ export default function LandingPage() {
           >
             Stop paying<br />
             €800/yr for<br />
-            outdated websites.
+            uoudated websites.
           </h1>
 
           <p className="font-spinnaker text-clover-dark text-[13.5px] leading-relaxed max-w-[420px]">
@@ -79,20 +54,26 @@ export default function LandingPage() {
         </div>
 
         {/* Right: Device mockup */}
-        <div className="relative flex-shrink-0 flex items-end">
-          <div className="absolute -top-4 -right-4 w-[520px] h-[520px] bg-clover-blob rounded-full opacity-30" />
+        <div className="relative flex-shrink-0">
           <img
             src="/Assets/desktop_phone.png"
             alt="CLOVER website builder on desktop and phone"
-            className="relative z-10 w-[520px] object-contain drop-shadow-xl"
+            className="w-[500px] object-contain"
           />
         </div>
       </section>
 
-      {/* Agent Cards Row */}
-      <section className="flex justify-center gap-16 px-24 py-12 bg-clover-bg">
-        {AGENTS.map((agent) => (
-          <AgentCard key={agent.name} {...agent} />
+      {/* Characters row — full body illustrated, sitting together */}
+      <section className="flex items-end justify-center px-16 pt-0 pb-0 bg-clover-bg overflow-hidden" style={{ height: '320px' }}>
+        {CHARACTERS.map((char, i) => (
+          <div key={char.alt} className="relative flex-shrink-0" style={{ marginLeft: i === 0 ? 0 : '-24px' }}>
+            <img
+              src={char.src}
+              alt={char.alt}
+              className="h-[320px] w-auto object-contain object-bottom"
+            />
+            <span className="sr-only">{char.label}</span>
+          </div>
         ))}
       </section>
 

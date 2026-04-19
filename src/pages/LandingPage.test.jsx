@@ -7,12 +7,12 @@ test('renders hero headline', () => {
   expect(screen.getByText(/Stop paying/i)).toBeInTheDocument()
 })
 
-test('renders all 4 agents', () => {
+test('renders all 4 character images', () => {
   render(<BrowserRouter><LandingPage /></BrowserRouter>)
-  expect(screen.getByText('The Boss')).toBeInTheDocument()
-  expect(screen.getByText('The Typewriter')).toBeInTheDocument()
-  expect(screen.getByText('The Painter')).toBeInTheDocument()
-  expect(screen.getByText('The Tech Guy')).toBeInTheDocument()
+  expect(screen.getByAltText(/Jack — The Boss/i)).toBeInTheDocument()
+  expect(screen.getByAltText(/Franco — The Typewriter/i)).toBeInTheDocument()
+  expect(screen.getByAltText(/Luna — The Painter/i)).toBeInTheDocument()
+  expect(screen.getByAltText(/Leo — The Tech Guy/i)).toBeInTheDocument()
 })
 
 test('renders Start building CTA', () => {
