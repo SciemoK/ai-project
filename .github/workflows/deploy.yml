@@ -19,6 +19,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+      - run: cp -r Assets dist/
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
