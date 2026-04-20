@@ -21,7 +21,7 @@ export default function LeoScreen({ data, onNext }) {
 
   return (
     <CharacterLayout
-      faceSrc="/Assets/Leo face.png"
+      faceSrc={import.meta.env.BASE_URL + "Assets/Leo face.png"}
       faceAlt="Leo — The Tech Guy"
       bubbleContent={
         <h1

@@ -11,14 +11,14 @@ const TYPES = [
 export default function BusinessTypeScreen({ onNext }) {
   return (
     <CharacterLayout
-      faceSrc="/Assets/Jack face.png"
+      faceSrc={import.meta.env.BASE_URL + "Assets/Jack face.png"}
       faceAlt="Jack — The Boss"
       bubbleContent={
         <h1
           className="font-nerko text-clover-text text-[36px] leading-[110%]"
           style={{ letterSpacing: '-1px' }}
         >
-          Nice. First things first — what kind of business are we building this for?
+          Good. First thing I need to know — what kind of business are we building this for?
         </h1>
       }
     >

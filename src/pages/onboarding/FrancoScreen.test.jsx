@@ -12,7 +12,7 @@ function renderScreen(onNext = () => {}) {
 
 test('renders Franco intro text', () => {
   renderScreen()
-  expect(screen.getByText(/Ciao! Franco here/i)).toBeInTheDocument()
+  expect(screen.getByText(/Bad copy kills/i)).toBeInTheDocument()
 })
 
 test('renders language options', () => {

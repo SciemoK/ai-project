@@ -10,20 +10,35 @@ function renderPage() {
   )
 }
 
-test('starts on step 1 — shows Jack greeting', () => {
+test('starts with Jack welcome message', () => {
   renderPage()
-  expect(screen.getByText(/Hey, I'm Jack/i)).toBeInTheDocument()
+  expect(screen.getByText(/I'm Jack/i)).toBeInTheDocument()
 })
 
-test('clicking SIGNUP advances to step 2', () => {
+test('shows LOGIN and SIGN UP options', () => {
   renderPage()
-  fireEvent.click(screen.getByText('SIGNUP'))
+  expect(screen.getByText('LOGIN')).toBeInTheDocument()
+  expect(screen.getByText('SIGN UP')).toBeInTheDocument()
+})
+
+test('answering welcome advances to business type question', () => {
+  renderPage()
+  fireEvent.click(screen.getByText('SIGN UP'))
   expect(screen.getByText(/what kind of business/i)).toBeInTheDocument()
 })
 
-test('selecting a business type advances to step 3', () => {
+test('selecting business type advances to name question', () => {
   renderPage()
-  fireEvent.click(screen.getByText('SIGNUP'))
+  fireEvent.click(screen.getByText('SIGN UP'))
   fireEvent.click(screen.getByText('Restaurant'))
-  expect(screen.getByText(/What's the name/i)).toBeInTheDocument()
+  expect(screen.getByText(/What's it called/i)).toBeInTheDocument()
+})
+
+test('past answers stay visible in the log', () => {
+  renderPage()
+  fireEvent.click(screen.getByText('SIGN UP'))
+  // Jack welcome still visible
+  expect(screen.getByText(/I'm Jack/i)).toBeInTheDocument()
+  // Business type question now also visible
+  expect(screen.getByText(/what kind of business/i)).toBeInTheDocument()
 })

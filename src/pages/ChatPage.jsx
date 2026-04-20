@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
 const ALL_AGENTS = [
-  { name: 'The Boss',       face: '/Assets/Jack face.png',   active: true  },
-  { name: 'The Typewriter', face: '/Assets/Franco face.png', active: false },
-  { name: 'The Painter',    face: '/Assets/Luna face.png',   active: false },
-  { name: 'The Tech Guy',   face: '/Assets/Leo face.png',    active: false },
+  { name: 'The Boss',       face: import.meta.env.BASE_URL + 'Assets/Jack face.png',   active: true  },
+  { name: 'The Typewriter', face: import.meta.env.BASE_URL + 'Assets/Franco face.png', active: false },
+  { name: 'The Painter',    face: import.meta.env.BASE_URL + 'Assets/Luna face.png',   active: false },
+  { name: 'The Tech Guy',   face: import.meta.env.BASE_URL + 'Assets/Leo face.png',    active: false },
 ]
 
 export default function ChatPage() {
@@ -68,7 +68,7 @@ export default function ChatPage() {
           <div className="relative flex-shrink-0">
             <div className="absolute inset-0 w-[180px] h-[220px] bg-clover-blob rounded-[40%_60%_55%_45%/50%_40%_60%_50%] opacity-70" />
             <img
-              src="/Assets/Jack.png"
+              src={import.meta.env.BASE_URL + "Assets/Jack.png"}
               alt="Jack — The Boss"
               className="relative z-10 w-[160px] object-contain"
             />

@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import CTAButton from '../../components/CTAButton'
 
 const AGENTS = [
-  { src: '/Assets/Jack face.png',   alt: 'Jack' },
-  { src: '/Assets/Franco face.png', alt: 'Franco' },
-  { src: '/Assets/Luna face.png',   alt: 'Luna' },
-  { src: '/Assets/Leo face.png',    alt: 'Leo' },
+  { src: import.meta.env.BASE_URL + 'Assets/Jack face.png',   alt: 'Jack' },
+  { src: import.meta.env.BASE_URL + 'Assets/Franco face.png', alt: 'Franco' },
+  { src: import.meta.env.BASE_URL + 'Assets/Luna face.png',   alt: 'Luna' },
+  { src: import.meta.env.BASE_URL + 'Assets/Leo face.png',    alt: 'Leo' },
 ]
 
 const DURATION_MS = 4000
@@ -54,7 +54,7 @@ export default function BuildingScreen() {
         <div className="flex flex-col items-center gap-6 flex-1 max-w-[600px]">
           <div className="relative w-full">
             <img
-              src="/Assets/desktop_phone.png"
+              src={import.meta.env.BASE_URL + "Assets/desktop_phone.png"}
               alt="Site preview"
               className="w-full object-contain"
             />

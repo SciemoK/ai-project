@@ -12,7 +12,7 @@ function renderScreen(onNext = () => {}) {
 
 test('renders Jack question about business name', () => {
   renderScreen()
-  expect(screen.getByText(/What's the name/i)).toBeInTheDocument()
+  expect(screen.getByText(/What's it called/i)).toBeInTheDocument()
 })
 
 test('CONTINUE is disabled when name is empty', () => {

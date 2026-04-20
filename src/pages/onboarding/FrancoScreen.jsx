@@ -16,7 +16,7 @@ export default function FrancoScreen({ onNext }) {
 
   return (
     <CharacterLayout
-      faceSrc="/Assets/Franco face.png"
+      faceSrc={import.meta.env.BASE_URL + "Assets/Franco face.png"}
       faceAlt="Franco — The Typewriter"
       bubbleContent={
         <div>
@@ -24,8 +24,8 @@ export default function FrancoScreen({ onNext }) {
             className="font-nerko text-clover-text text-[36px] leading-[110%]"
             style={{ letterSpacing: '-1px' }}
           >
-            Ciao! Franco here. Words are my territory — bad copy kills a great
-            website, so let's get this right. What language should the site be in?
+            Franco. Bad copy kills a great website — so let's get this right
+            before we touch anything else. What language should the site be in?
           </h1>
 
           <div className="flex flex-wrap gap-2 mt-4">

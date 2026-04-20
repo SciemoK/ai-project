@@ -28,7 +28,7 @@ export default function LunaScreen({ onNext }) {
 
   return (
     <CharacterLayout
-      faceSrc="/Assets/Luna face.png"
+      faceSrc={import.meta.env.BASE_URL + "Assets/Luna face.png"}
       faceAlt="Luna — The Painter"
       bubbleContent={
         <div>
@@ -36,8 +36,8 @@ export default function LunaScreen({ onNext }) {
             className="font-nerko text-clover-text text-[36px] leading-[110%]"
             style={{ letterSpacing: '-1px' }}
           >
-            Hi! I'm Luna — I make sure this looks stunning. A few quick choices
-            and I'll handle the rest. How should your menu work?
+            Luna. I make sure this looks stunning — and I take that seriously.
+            A few quick choices and I'll handle the rest. How should your menu work?
           </h1>
 
           <div className="flex flex-wrap gap-2 mt-4">

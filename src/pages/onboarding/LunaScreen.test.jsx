@@ -12,7 +12,7 @@ function renderScreen(onNext = () => {}) {
 
 test('renders Luna intro text', () => {
   renderScreen()
-  expect(screen.getByText(/Hi! I'm Luna/i)).toBeInTheDocument()
+  expect(screen.getByText(/Luna\. I make sure/i)).toBeInTheDocument()
 })
 
 test('renders menu behavior options', () => {

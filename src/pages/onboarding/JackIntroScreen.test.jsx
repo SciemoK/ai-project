@@ -12,19 +12,19 @@ function renderScreen(onNext = () => {}) {
 
 test('renders Jack greeting text', () => {
   renderScreen()
-  expect(screen.getByText(/Hey, I'm Jack/i)).toBeInTheDocument()
+  expect(screen.getByText(/I'm Jack/i)).toBeInTheDocument()
 })
 
-test('renders LOGIN and SIGNUP buttons', () => {
+test('renders LOGIN and SIGN UP buttons', () => {
   renderScreen()
   expect(screen.getByText('LOGIN')).toBeInTheDocument()
-  expect(screen.getByText('SIGNUP')).toBeInTheDocument()
+  expect(screen.getByText('SIGN UP')).toBeInTheDocument()
 })
 
-test('SIGNUP calls onNext', () => {
+test('SIGN UP calls onNext', () => {
   const onNext = vi.fn()
   renderScreen(onNext)
-  fireEvent.click(screen.getByText('SIGNUP'))
+  fireEvent.click(screen.getByText('SIGN UP'))
   expect(onNext).toHaveBeenCalledTimes(1)
 })
 

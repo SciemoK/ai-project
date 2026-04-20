@@ -10,15 +10,15 @@ export default function BusinessNameScreen({ onNext }) {
 
   return (
     <CharacterLayout
-      faceSrc="/Assets/Jack face.png"
+      faceSrc={import.meta.env.BASE_URL + "Assets/Jack face.png"}
       faceAlt="Jack — The Boss"
       bubbleContent={
         <h1
           className="font-nerko text-clover-text text-[36px] leading-[110%]"
           style={{ letterSpacing: '-1px' }}
         >
-          Good choice. What's the name? And if you've got an existing website,
-          drop the link — I'll take a look.
+          Good choice. What's it called? And if you've already got a site,
+          drop the link — I'll pass it to the team.
         </h1>
       }
     >

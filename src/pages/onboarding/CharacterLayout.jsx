@@ -14,13 +14,12 @@ export default function CharacterLayout({ faceSrc, faceAlt, bubbleContent, child
       <div className="flex-1 flex flex-col items-center justify-center gap-10 px-16">
         {/* Chat row: face left + bubble right */}
         <div className="flex items-center gap-10 w-full max-w-[1000px]">
-          {/* Face + peach blob */}
-          <div className="relative flex-shrink-0 w-[280px] h-[280px]">
-            <div className="absolute inset-0 bg-clover-blob rounded-full opacity-70 scale-110" />
+          {/* Face — displayed as-is, no circle */}
+          <div className="relative flex-shrink-0">
             <img
               src={faceSrc}
               alt={faceAlt}
-              className="relative z-10 w-[280px] h-[280px] object-contain"
+              className="w-[220px] h-[220px] object-contain"
             />
           </div>
 
