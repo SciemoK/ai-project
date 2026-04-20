@@ -76,7 +76,7 @@ export default function BuildingScreen() {
           </div>
 
           {done && (
-            <CTAButton size="small" onClick={() => navigate('/my-sites')}>
+            <CTAButton size="small" onClick={() => window.open('https://www.youtube.com/shorts/_6HzLIJPH2A', '_blank')}>
               SEE MY SITE →
             </CTAButton>
           )}
