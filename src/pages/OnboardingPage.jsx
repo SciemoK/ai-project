@@ -1,62 +1,62 @@
-import { Link } from 'react-router-dom'
-import CTAButton from '../components/CTAButton'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import JackIntroScreen     from './onboarding/JackIntroScreen'
+import BusinessTypeScreen  from './onboarding/BusinessTypeScreen'
+import BusinessNameScreen  from './onboarding/BusinessNameScreen'
+import FrancoScreen        from './onboarding/FrancoScreen'
+import LunaScreen          from './onboarding/LunaScreen'
+import LeoScreen           from './onboarding/LeoScreen'
+import BuildingScreen      from './onboarding/BuildingScreen'
+
+const SCREENS = [
+  JackIntroScreen,
+  BusinessTypeScreen,
+  BusinessNameScreen,
+  FrancoScreen,
+  LunaScreen,
+  LeoScreen,
+  BuildingScreen,
+]
+
+const slideVariants = {
+  enter:  { x: 60,  opacity: 0 },
+  center: { x: 0,   opacity: 1 },
+  exit:   { x: -60, opacity: 0 },
+}
 
 export default function OnboardingPage() {
+  const [step, setStep] = useState(0)
+  const [data, setData] = useState({
+    businessType:    null,
+    businessName:    '',
+    existingUrl:     '',
+    language:        'en',
+    services:        '',
+    menuBehavior:    null,
+    colorPalette:    null,
+    referenceImages: [],
+  })
+
+  function onNext(partialData = {}) {
+    setData(prev => ({ ...prev, ...partialData }))
+    setStep(prev => prev + 1)
+  }
+
+  const Screen = SCREENS[step]
+
   return (
-    <div className="bg-clover-bg min-h-screen flex flex-col relative">
-      {/* Logo top-left */}
-      <div className="absolute top-8 left-10">
-        <Link to="/" className="font-nerko text-clover-brand text-[18px] tracking-[3.5px]">
-          CLOVER
-        </Link>
-      </div>
-
-      {/* Centered content */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-14 px-16">
-
-        {/* Chat row: Jack face left + speech bubble right */}
-        <div className="flex items-center gap-10 w-full max-w-[1000px]">
-
-          {/* Jack face portrait with blob */}
-          <div className="relative flex-shrink-0 w-[280px] h-[280px]">
-            <div className="absolute inset-0 bg-clover-blob rounded-full opacity-70 scale-110" />
-            <img
-              src="/Assets/Jack face.png"
-              alt="Jack — The Boss"
-              className="relative z-10 w-[280px] h-[280px] object-cover object-top rounded-full"
-            />
-          </div>
-
-          {/* Speech bubble */}
-          <div className="relative bg-clover-blob rounded-[20px] px-12 py-10 flex-1">
-            {/* Triangle tail pointing left toward Jack */}
-            <div
-              className="absolute top-1/2 -translate-y-1/2"
-              style={{
-                left: '-24px',
-                width: 0,
-                height: 0,
-                borderTop: '14px solid transparent',
-                borderBottom: '14px solid transparent',
-                borderRight: '24px solid #F5DBC0',
-              }}
-            />
-            <h1
-              className="font-nerko text-clover-text text-[52px] leading-[105%]"
-              style={{ letterSpacing: '-1.5px' }}
-            >
-              Hey there I'm Jack...<br />
-              First of all, it's your first time?
-            </h1>
-          </div>
-        </div>
-
-        {/* CTA buttons */}
-        <div className="flex items-center gap-8">
-          <CTAButton size="large">LOGIN</CTAButton>
-          <CTAButton size="large">SIGNUP</CTAButton>
-        </div>
-      </div>
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={step}
+        variants={slideVariants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{ duration: 0.35, ease: 'easeInOut' }}
+        style={{ minHeight: '100vh' }}
+      >
+        <Screen data={data} onNext={onNext} />
+      </motion.div>
+    </AnimatePresence>
   )
 }
