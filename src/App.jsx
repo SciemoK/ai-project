@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import LandingPage    from './pages/LandingPage'
 import OnboardingPage from './pages/OnboardingPage'
 import ChatPage       from './pages/ChatPage'
@@ -8,7 +8,7 @@ import MySitesPage    from './pages/MySitesPage'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/"           element={<LandingPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
@@ -18,6 +18,6 @@ export default function App() {
         <Route path="/my-sites"   element={<MySitesPage />} />
         <Route path="*"           element={<LandingPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
